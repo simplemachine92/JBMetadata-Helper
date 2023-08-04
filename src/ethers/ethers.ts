@@ -2,8 +2,6 @@ import { ethers } from "ethers";
 import { MetaDataHelper__factory } from "../../app/contracts";
 import { MetaDataHelper } from "../../app/contracts";
 
-/* Goerli contract: 0x236C580A7AC3ffB3b453B11F45Ed68187ed33C7E */
-
 class ethersInterface {
   private signer: ethers.Wallet;
   contract!: MetaDataHelper;
