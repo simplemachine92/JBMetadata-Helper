@@ -1,6 +1,6 @@
 {
   "name": "juicebox-metadata-helper",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An interface for using the Juicebox Metadata Library Helper",
   "main": "src/index.js",
   "type": "commonjs",
