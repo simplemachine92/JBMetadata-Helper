@@ -2,6 +2,7 @@
 
 ## To-do
 
+* Meta-data builder in JS instead of calling helper
 * Build rules / script
 * Configure eslint
 * ESM Compatibility
