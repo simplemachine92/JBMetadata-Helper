@@ -33,8 +33,6 @@ class ethersInterface {
   ) {
     const dataTest = ethers.utils.defaultAbiCoder.encode(_types, _values);
 
-    const id = ethers.utils.hexlify([1, 2, 3, 4]);
-
     const result = this.contract.createMetadata(_ids, [dataTest]);
 
     return result;

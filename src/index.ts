@@ -1,3 +1,1 @@
-import ethersInterface from "./ethers/ethers";
-
-export { ethersInterface };
+export { default as ethersInterface } from "./ethers/ethers";
