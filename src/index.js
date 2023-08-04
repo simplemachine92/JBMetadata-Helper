@@ -4,5 +4,5 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ethersInterface = void 0;
-var ethers_1 = require("./ethers/ethers");
-Object.defineProperty(exports, "ethersInterface", { enumerable: true, get: function () { return __importDefault(ethers_1).default; } });
+const ethers_1 = __importDefault(require("./ethers/ethers"));
+exports.ethersInterface = ethers_1.default;
