@@ -1,20 +1,25 @@
 import { ethers } from "ethers";
-import { getGoerliSdk } from "@dethcrypto/eth-sdk-client";
+import { MetaDataHelper__factory } from "../../app/contracts";
+import { MetaDataHelper } from "../../app/contracts";
+
+/* Goerli contract: 0x236C580A7AC3ffB3b453B11F45Ed68187ed33C7E */
 
 class ethersInterface {
   private signer: ethers.Wallet;
-  sdk: any;
+  contract!: MetaDataHelper;
 
   constructor(signer: ethers.Wallet) {
     if (!signer) {
       throw new Error("signer is required");
     }
     this.signer = signer;
-    this.sdk = getGoerliSdk(signer);
+    this.contract = MetaDataHelper__factory.connect(
+      "0x236C580A7AC3ffB3b453B11F45Ed68187ed33C7E", this.signer
+    );
   }
 
   async addData(id: string, dataToAdd: string, ogData: string) {
-    const result = await this.sdk.metaDataHelper.addToMetadata(
+    const result = await this.contract.addToMetadata(
       id,
       dataToAdd,
       ogData
@@ -32,13 +37,13 @@ class ethersInterface {
 
     const id = ethers.utils.hexlify([1, 2, 3, 4]);
 
-    const result = this.sdk.metaDataHelper.createMetadata(_ids, [dataTest]);
+    const result = this.contract.createMetadata(_ids, [dataTest]);
 
     return result;
   }
 
   async getDataById(_id: string, _metadata: ethers.utils.BytesLike) {
-    const result = await this.sdk.metaDataHelper.getMetadata(_id, _metadata);
+    const result = await this.contract.getMetadata(_id, _metadata);
 
     return result;
   }

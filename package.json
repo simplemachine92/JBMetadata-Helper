@@ -1,6 +1,6 @@
 {
   "name": "juicebox-metadata-helper",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "An interface for using the Juicebox Metadata Library Helper",
   "main": "src/index.js",
   "type": "module",
@@ -11,8 +11,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@typechain/ethers-v5": "^11.1.1",
     "@types/lodash": "^4.14.196",
     "@types/node": "^20.4.6",
+    "typechain": "^8.3.1",
     "typescript": "^5.1.6"
   },
   "dependencies": {
