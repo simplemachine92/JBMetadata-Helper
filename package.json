@@ -1,9 +1,9 @@
 {
   "name": "juicebox-metadata-helper",
-  "version": "0.0.4",
+  "version": "0.0.2",
   "description": "An interface for using the Juicebox Metadata Library Helper",
-  "main": "index.js",
-  "type": "commonjs",
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
