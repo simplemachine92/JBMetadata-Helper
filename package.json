@@ -3,7 +3,7 @@
   "version": "0.0.7",
   "description": "An interface for using the Juicebox Metadata Library Helper",
   "main": "src/index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
