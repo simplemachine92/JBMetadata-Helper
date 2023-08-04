@@ -1,6 +1,6 @@
 {
   "name": "juicebox-metadata-helper",
-  "version": "0.1.1",
+  "version": "0.0.7",
   "description": "An interface for using the Juicebox Metadata Library Helper",
   "main": "src/index.js",
   "type": "commonjs",
@@ -12,11 +12,14 @@
   "license": "ISC",
   "devDependencies": {
     "@typechain/ethers-v5": "^11.1.1",
+    "@types/lodash": "^4.14.196",
     "@types/node": "^20.4.6",
     "typechain": "^8.3.1",
     "typescript": "^5.1.6"
   },
   "dependencies": {
+    "@dethcrypto/eth-sdk": "^0.3.4",
+    "@dethcrypto/eth-sdk-client": "^0.1.6",
     "ethers": "^5.7.0",
     "viem": "^1.5.3"
   }
