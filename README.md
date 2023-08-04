@@ -1,6 +1,13 @@
 # Juicebox Metadata Helper Package
 
-## Usage / Importing:
+## To-do
+
+* Build rules / script
+* Configure eslint
+* ESM Compatibility
+* Viem interface
+
+## Usage / Importing
 
 Install with package manager
 ```npm i juicebox-metadata-helper```
@@ -10,7 +17,7 @@ Usage in files:
 import {ethersInterface} from "juicebox-metadata-helper";
 ```
 
-## Create your Helper Instance:
+## Create your Helper Instance
 
 ```
 import {ethersInterface} from "juicebox-metadata-helper";
