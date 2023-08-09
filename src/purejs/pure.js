@@ -10,14 +10,14 @@ function createMetadata(ids, metadatas) {
     // Calculate offset for the data is after the first reserved word...
     let offset = 1;
     // ... and after the id/offset lookup table, rounding up to 32 bytes if not a multiple
-    offset += Math.floor((ids.length * 4 - 1) / 32 + 1);
+    offset += Math.floor(ids.length);
     // For each id, add it to the lookup table with the next free offset, then increment the offset by the data length
     for (let i = 0; i < ids.length; i++) {
         // Get metadata, id and offset
         metadata += ethers_1.ethers.utils.solidityPack(["bytes4"], [ids[i]]).slice(2);
         metadata += ethers_1.ethers.utils.solidityPack(["uint8"], [offset]).slice(2);
         // increment the offset by the data length, rounded up to the nearest 32-byte word
-        offset += Math.ceil(metadatas[i].length / 32);
+        offset += metadatas[i].length / 32;
         // Overflowing a bytes1?
         if (offset > 2 ** 8)
             throw new Error("METADATA_TOO_LONG");
