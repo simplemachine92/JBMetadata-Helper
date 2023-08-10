@@ -1,11 +1,5 @@
 # Juicebox Metadata Helper Package
 
-## To-do
-
-* Build rules / CI & Tests
-* Configure eslint
-* ESM Compatibility
-
 ## Install / Importing
 
 Install with package manager
