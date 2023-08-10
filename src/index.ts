@@ -1,3 +1,3 @@
-import ethersInterface from "./ethers/ethers";
+import createMetadata from "./purejs/pure";
 
-export { ethersInterface };
+export { createMetadata };
