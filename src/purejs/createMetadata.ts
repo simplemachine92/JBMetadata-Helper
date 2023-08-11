@@ -15,7 +15,6 @@ function createMetadata(ids: string[], metadatas: string[]) {
 
   // ... and after the id/offset lookup table, rounding up to 32 bytes if not a multiple
   offset += Math.floor((ids.length * 5 - 1) / 32 + 1);
-  console.log('offset outside loop', offset)
 
   // For each id, add it to the lookup table with the next free offset, then increment the offset by the data length
   for (let i = 0; i < ids.length; i++) {
@@ -25,7 +24,7 @@ function createMetadata(ids: string[], metadatas: string[]) {
 
     metadata += ethers.utils.solidityPack(["uint8"], [offset]).slice(2);
     // increment the offset by the data length, rounded up to the nearest 32-byte word
-    offset += metadatas[i].slice(2).length / 32;
+    offset += Math.floor(metadatas[i].length / 32);
     /* console.log('metadata length', metadatas[i].slice(2).length / 32) */
 
     // Overflowing a bytes1?
