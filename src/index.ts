@@ -1,3 +1,4 @@
-import createMetadata from "./purejs/pure";
+import createMetadata from "./purejs/createMetadata";
+import getMetadata from "./purejs/getMetadata";
 
-export { createMetadata };
+export { createMetadata, getMetadata };
