@@ -15,11 +15,9 @@ function createMetadata(ids, metadatas) {
     for (let i = 0; i < ids.length; i++) {
         // Get metadata, id and offset
         metadata += ethers_1.ethers.utils.solidityPack(["bytes4"], [ids[i]]).slice(2);
-        /* console.log('offset here', offset) */
         metadata += ethers_1.ethers.utils.solidityPack(["uint8"], [offset]).slice(2);
         // increment the offset by the data length, rounded up to the nearest 32-byte word
-        offset += Math.floor(metadatas[i].length / 32);
-        /* console.log('metadata length', metadatas[i].slice(2).length / 32) */
+        offset += Math.floor(ethers_1.ethers.utils.hexDataLength(metadatas[i]) / 32);
         // Overflowing a bytes1?
         if (offset > 2 ** 8)
             throw new Error("METADATA_TOO_LONG");

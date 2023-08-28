@@ -4,10 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const ethers_1 = require("ethers");
+const getMetadata_1 = __importDefault(require("./purejs/getMetadata"));
 const createMetadata_1 = __importDefault(require("./purejs/createMetadata"));
 const assert_1 = __importDefault(require("assert"));
 const eth_sdk_client_1 = require("@dethcrypto/eth-sdk-client");
-const goerliProvider = new ethers_1.ethers.providers.JsonRpcProvider("https://goerli.infura.io/v3/512122ae7cd847d4a5b78c1810cc4bc2");
+const goerliProvider = new ethers_1.ethers.providers.JsonRpcProvider("https://goerli.infura.io/v3/cf24d56cea4141b08f70122415338780");
 /* const goerliProvider = ethers.getDefaultProvider("goerli"); */
 const defaultSigner = ethers_1.ethers.Wallet.createRandom().connect(goerliProvider);
 const sdk = (0, eth_sdk_client_1.getGoerliSdk)(defaultSigner);
@@ -37,8 +38,9 @@ async function main() {
     const contractRes = await sdk.metaDataHelper.createMetadata([id, id2], [encoded1, encoded2]);
     console.log('contract: ', contractRes);
     console.log('js: ', jsRes);
-    /* const res2 = getMetadata(id2, jsRes); */
     const isEq = assert_1.default.equal(jsRes, contractRes);
+    const getById = (0, getMetadata_1.default)(id, jsRes);
+    console.log(getById);
 }
 if (require.main === module) {
     main();

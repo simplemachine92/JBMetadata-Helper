@@ -5,10 +5,8 @@ import assert from "assert";
 import { getGoerliSdk } from "@dethcrypto/eth-sdk-client";
 
 const goerliProvider = new ethers.providers.JsonRpcProvider(
-  "https://goerli.infura.io/v3/512122ae7cd847d4a5b78c1810cc4bc2"
+  "YOUR RPC URL"
 );
-
-/* const goerliProvider = ethers.getDefaultProvider("goerli"); */
 
 const defaultSigner = ethers.Wallet.createRandom().connect(goerliProvider);
 
@@ -49,8 +47,10 @@ async function main() {
   console.log('contract: ', contractRes)
   console.log('js: ', jsRes);
 
-  /* const res2 = getMetadata(id2, jsRes); */
   const isEq = assert.equal(jsRes, contractRes);
+
+  const getById = getMetadata(id, jsRes);
+  console.log(getById)
 }
 
 if (require.main === module) {
