@@ -8,8 +8,7 @@ const getMetadata_1 = __importDefault(require("./purejs/getMetadata"));
 const createMetadata_1 = __importDefault(require("./purejs/createMetadata"));
 const assert_1 = __importDefault(require("assert"));
 const eth_sdk_client_1 = require("@dethcrypto/eth-sdk-client");
-const goerliProvider = new ethers_1.ethers.providers.JsonRpcProvider("https://goerli.infura.io/v3/cf24d56cea4141b08f70122415338780");
-/* const goerliProvider = ethers.getDefaultProvider("goerli"); */
+const goerliProvider = new ethers_1.ethers.providers.JsonRpcProvider("YOUR RPC URL");
 const defaultSigner = ethers_1.ethers.Wallet.createRandom().connect(goerliProvider);
 const sdk = (0, eth_sdk_client_1.getGoerliSdk)(defaultSigner);
 async function main() {
